@@ -55,5 +55,4 @@ gem 'pundit'
 gem 'figaro', '1.0'
 gem 'querystring', '~> 0.1.0'
 gem 'faker'
-
-
+gem 'haml-rails', '~> 0.9.0'
