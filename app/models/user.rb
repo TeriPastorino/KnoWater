@@ -1,6 +1,17 @@
 class User < ActiveRecord::Base
-  Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, 'CONSUMER_KEY', 'CONSUMER_SECRET'
-  #provider :facebook, 'CONSUMER_KEY', 'CONSUMER_SECRET'
-
+  def self.find_or_create_by_omniauth(auth_hash)
+    # check to see if a user exists with the uid
+    user = User.find_by(uid: auth_hash[:uid])
+    # if it does, return that use
+    if user.present?
+      user
+    else
+    # if it doesnt, create the user with the providr, uid, info['name']
+      create do |user|
+      user.provider = (auth_hash[:provider])
+      user.uid = (auth_hash[:uid])
+      user.name = (auth_hash[:name])
+     end 
+    end
+  end
 end
