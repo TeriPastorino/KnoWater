@@ -1,8 +1,12 @@
 FactoryGirl.define do
+
+  sequence(:uid) {|n| "uid-#{n}"}
+
+
   factory :user do
-    name "MyString"
-provider "MyString"
-uid "MyString"
+    name Faker::Name.name 
+    provider "twitter"
+    uid
   end
 
 end
