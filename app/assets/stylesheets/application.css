@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require bootstrap-social
  */
 
 @import "bootstrap-sprockets";
@@ -19,19 +21,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-
-@media (max-width: 768px) {
-    #social-sign-in .icon-5x {
-        font-size: 7em;
-    }
-}
-@media (max-width: 480px) {
-    #social-sign-in .icon-5x {
-        font-size: 4.5em;
-    }
-}
-@media (min-width: 1199px) {
-    #social-sign-in .icon-5x {
-        font-size: 7em;
-    }
+body {
+  background-color: 
 }
