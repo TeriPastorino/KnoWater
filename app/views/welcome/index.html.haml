@@ -1,12 +1,17 @@
 .container
   .jumbotron
     %h1 KnoWater
-    %p Learn Where Your water goes and How to track what you use daily
+    %h2 Make a Difference
+    %p 
+      %li How much water do you currently use?
+      %li Track your daily usage
+      %li Make little changes to Reduce and Save what little water we have
 
+    %ul
     = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
       %i.fa.fa-twitter &nbsp;
       Sign in with Twitter
-
+    %ul
     = link_to "#", class: 'btn btn-social btn-lg btn-facebook btn-sm', role: 'button' do
       %i.fa.fa-twitter &nbsp;
       Sign in with Facebook
@@ -16,7 +21,7 @@
   %p Hello World
 
   %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
-  \...We never know the worth of water till the well is dry. ~Thomas Fuller, Gnomologia, 1732
+  %h3 We never know the worth of water till the well is dry. ~Thomas Fuller, Gnomologia, 1732
 
    
 
