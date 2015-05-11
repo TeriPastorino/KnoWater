@@ -1,21 +1,34 @@
-%h1 Do you Know Water?
-%p Find me in app/views/welcome/index.html.haml
-.col-sm-5.form-group
-  %p Sign in using social media
-  %a.btn.btn-block.btn-social.btn-lg.btn-twitter{:href => "#", :role => "button"}
-    %div
-      %i.fa.fa-twitter-square.fa-2x
-      =link_to "Sign in with Twitter", "/auth/twitter"
-    %div  
-      %a.facebook.btn.btn-block{:href => "#", :role => "button"}
-      %i.fa.fa-facebook-square.fa-2x
-      =link_to "Sign in with Facebook", "/auth/twitter"
-    %div
+.container
+  .jumbotron
+    %h1 KnoWater
+    %p Learn Where Your water goes and How to track what you use daily
 
-      %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
-      \...We never know the worth of water till the well is dry. ~Thomas Fuller, Gnomologia, 1732
-
-      %div
-      %a.btn.btn-block.btn-social.btn-twitter
-      %i.fa.fa-twitter
+    = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
+      %i.fa.fa-twitter &nbsp;
       Sign in with Twitter
+
+    = link_to "#", class: 'btn btn-social btn-lg btn-facebook btn-sm', role: 'button' do
+      %i.fa.fa-twitter &nbsp;
+      Sign in with Facebook
+
+  %h3.text-center Take the Quiz
+  %p blah blah blah
+  %p Hello World
+
+  %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
+  \...We never know the worth of water till the well is dry. ~Thomas Fuller, Gnomologia, 1732
+
+   
+
+
+
+
+
+/%h1 Do you Know Water?
+/ %p Find me in app/views/welcome/index.html.haml
+/ .col-sm-5
+/   %p Sign in using social media
+/   %p   
+/     %a.btn.btn-social.btn-lg.btn-twitter{:href => "/auth/twitter", :role => "button"} 
+/       %i.fa.fa-twitter &nbsp;
+/       Sign in with Twitter
