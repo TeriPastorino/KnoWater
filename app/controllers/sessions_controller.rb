@@ -5,7 +5,10 @@ class SessionsController < ApplicationController
     redirect_to root_path, notice: "Sign in Successful"
   end
 
-
+  def destroy
+    session.clear
+    redirect_to root_path, notice: "Sign out Successful"
+  end
 
   protected
 
