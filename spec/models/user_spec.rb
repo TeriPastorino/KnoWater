@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
         user = User.find_or_create_by_omniauth(auth_hash)
         expect(user.provider).to eq(auth_hash[:provider])
         expect(user.uid).to eq(auth_hash[:uid])
-        expect(user.name).to eq(auth_hash[:name])
+        expect(user.name).to eq("Teri")
       end
     end
   end
