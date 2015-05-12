@@ -1,5 +1,5 @@
 %nav.navbar-default
-  .container-fluid
+  .container
     / Brand and toggle get grouped for better mobile display
     .navbar-header
       %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
@@ -20,15 +20,13 @@
           Home
           %span.sr-only (current)
       
-    %ul.nav.navbar-nav.navbar-right
+    %ul.nav.navbar-nav.navbar-pull-right
       - if current_user
         %p.navbar-text.navbar-right
-          Hello #{current_user.id} !
+          Hello #{current_user.name} !
           /\#{link_to Sign out, destroy_user_session_path, method: :delete}
-      - else
+      -else
         %p
-          = link_to Sign In, new_user_session_path
-          /or
-          /\#{link_to Sign Up, new_user_registration_path}
+          = link_to "Signout", destroy_user_session_path, method: :delete
   / /.navbar-collapse
 / /.container-fluid
