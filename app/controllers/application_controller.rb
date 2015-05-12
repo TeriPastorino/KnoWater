@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     #look up once
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
   end
 
   # make available w/i views
