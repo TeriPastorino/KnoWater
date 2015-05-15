@@ -15,3 +15,6 @@ class User < ActiveRecord::Base
     end
   end
 end
+#extra to do
+#Login with FB
+#login wihtout social media
