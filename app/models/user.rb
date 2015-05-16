@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :activities
+  
   def self.find_or_create_by_omniauth(auth_hash)
     # check to see if a user exists with the uid
     user = User.find_by(uid: auth_hash[:uid])
