@@ -1,4 +1,5 @@
 class Activity < ActiveRecord::Base
+  belongs_to :user
   validates :activity_type, presence: true, inclusion: {in: %w(shower)}
 
   before_save :convert_to_oz
