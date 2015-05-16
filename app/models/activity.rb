@@ -1,15 +1,7 @@
 class Activity < ActiveRecord::Base
   validates :activity_type, presence: true, inclusion: {in: %w(shower)}
 
-  CONVERSION_HASH = {
-    true => {
-      "shower" => 128
-    },
-    false => {
-      "shower" => 256
-    }
-  }
-
+  before_save :convert_to_oz
   #true = for high energy oz/gal
   #false = standard oz/gal
   #128 oz/gallon
@@ -22,11 +14,13 @@ class Activity < ActiveRecord::Base
       "shower" => 512
     }
   }
-
-  def convert_to_oz
-    multiplier = CONVERSION_HASH[high_efficiency][activity_type]
-    self.ounces = per_use * multiplier
-  end
+  #???? protected or private? protected can call methods on self but read that protected ofted used with callbacks
+  protected
+    def convert_to_oz
+      multiplier = CONVERSION_HASH[high_efficiency][activity_type]
+      self.ounces = per_use * multiplier
+    end
+  
 end
 
 #extra

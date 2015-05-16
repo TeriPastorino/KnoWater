@@ -21,6 +21,7 @@ RSpec.describe Activity, type: :model do
       context "when High Efficiency is false" do
         let(:high_efficiency) { false }
         it "converts 2 minutes in a shower to 512oz"
+          #expect {activity.save}.to change {activity.ounces}.to(512)
       end
     end
   end
