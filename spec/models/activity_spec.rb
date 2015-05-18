@@ -4,8 +4,11 @@ RSpec.describe Activity, type: :model do
   describe "Validations" do
     describe "#activity_type" do
       it "does not allow nil for activity_type"
+      #set to nil
       it "allows shower for activity_type"
+      #set to shower
       it "does not allow 'foo' for activity_type"
+      #set to foo
     end
   end
   describe "Callbacks" do
@@ -20,9 +23,11 @@ RSpec.describe Activity, type: :model do
       end
       context "when High Efficiency is false" do
         let(:high_efficiency) { false }
-        it "converts 2 minutes in a shower to 512oz"
-          #expect {activity.save}.to change {activity.ounces}.to(512)
+        it "converts 2 minutes in a shower to 512oz" do
+          expect {activity.save}.to change {activity.ounces}.to(512)
+        end
       end
     end
   end
 end
+

@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :activity do
     activity_type "MyString"
-    per_use 1
-    ounces 1
+    per_use 2
+    ounces 128
     high_efficiency false
   end
 
