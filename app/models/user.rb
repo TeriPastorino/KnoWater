@@ -1,8 +1,8 @@
-class User < ActiveRecord::Base
+qclass User < ActiveRecord::Base
   has_many :activities
-  validates :uid, presence: true, inclusion: {in: %w(twitter), allow_blank: true}
-  validates :provider, presence: true
-  
+  validates :uid, presence: true
+  validates :provider, presence: true, inclusion: {in: %w(twitter), allow_blank: true}
+  validates :user_id, presence: true
   def self.find_or_create_by_omniauth(auth_hash)
     # check to see if a user exists with the uid
     user = User.find_by(uid: auth_hash[:uid])
