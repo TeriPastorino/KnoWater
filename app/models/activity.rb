@@ -1,7 +1,8 @@
 class Activity < ActiveRecord::Base
   belongs_to :user
-  validates :activity_type, presence: true, inclusion: {in: %w(shower)}
-
+  validates :activity_type, presence: true, inclusion: {in: %w(shower), allow_blank: true}
+  validates :per_use, presence: true, numericality: { only_integer: true }
+  validates :user, presence: true
   before_save :convert_to_oz
   #true = for high energy oz/gal
   #false = standard oz/gal
