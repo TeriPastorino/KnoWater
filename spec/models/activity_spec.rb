@@ -52,11 +52,11 @@ RSpec.describe Activity, type: :model do
 
     describe '#user' do
       it "must be present" do
-        user = FactoryGirl.build(:activity, user: nil)
-        expect(activity).to be_invalid
+        activity = FactoryGirl.build(:activity, user: nil)
+        expect(activity).to_not be_valid
         expect(activity.errors[:user].count).to eq(1)
         user = User.new
-        expect(user).to be_present        
+        expect(activity).to be_present        
       end              
     end
     # per_use
