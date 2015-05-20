@@ -1,4 +1,4 @@
-require 'rails_helper'
+git require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "validations" do
@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
         expect(user.valid?).to eq(false)
         expect(user.errors[:provider].count).to eq(1)
         user.provider = "twitter"
-        expect(user).to eq(true)
+        expect(user).to be_valid
       end
     end
 
@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to eq(false)
       expect(user.errors[:provider].count).to eq(1)
       user.provider = "twitter"
-      expect(user).to eq(true)
+      expect(user).to be_valid
     end
   end
 end
