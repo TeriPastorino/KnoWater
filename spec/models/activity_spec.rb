@@ -55,8 +55,8 @@ RSpec.describe Activity, type: :model do
         activity = FactoryGirl.build(:activity, user: nil)
         expect(activity).to_not be_valid
         expect(activity.errors[:user].count).to eq(1)
-        user = User.new
-        expect(activity).to be_present        
+        activity.user = User.new
+        expect(activity).to be_valid    
       end              
     end
     # per_use
