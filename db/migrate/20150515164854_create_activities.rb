@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.string :activity_type
       t.integer :per_use
       t.integer :ounces
-      t.boolean :high_efficiency
+      t.boolean :high_efficiency, default: false
 
       t.timestamps null: false
     end
