@@ -1,3 +1,25 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header-bg{
+  background: image-url('9978873226_ea493c2797_o.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.jumbotron-transp {
+ padding: 30px;
+ margin-bottom: 30px;
+ font-size: 21px;
+ font-weight: 200;
+ line-height: 2.1428571435;
+ color: black;
+ text-align: center;
+  }
+ /*background: rgb(0, 54, 54);*/
+    /* all other browsers */
+/*background: rgba(0, 54, 54, 0.05);*/
+ 
