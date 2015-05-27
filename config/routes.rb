@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get '/signout', to: 'sessions#destroy', as: :signout
   get 'welcome/about'
 
+  resources :activities
+
 
 end
