@@ -10,12 +10,13 @@ class ActivitiesController < ApplicationController
   
   def create
     @user = current_user
-    @activity = Activity.new(params[:id])
+    raise
+    @activity = Activity.new(activity_params)
     @activity.save
   end
 
   def show
-    @activity = Activity.find(activity_params[:id])
+    @activity = Activity.find(params[:activity_id])
   end
 
   def update
@@ -26,6 +27,6 @@ class ActivitiesController < ApplicationController
 
   private
     def activity_params
-      params.require(:activity_type).permit(:per_use)
+      params.require(:activity).permit(:per_use)
     end
 end
