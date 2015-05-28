@@ -1,0 +1,5 @@
+%h1 Log Water Use
+= form_for Activity.new do |f|
+  = f.hidden_field :activity_type, "shower"
+  = f.text_field :per_use
+end
