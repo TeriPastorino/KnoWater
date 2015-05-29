@@ -19,7 +19,15 @@
           %a{:href => "/"}
             Home
             %span.sr-only (current)
-        
+        %li
+          %a{:href => "activities/show"}
+            Log
+            %span.sr-only(current)
+        %li
+          %a{:href => "/information/info"}
+            Information
+            %span.sr-only(current)
+
       %ul.nav.navbar-nav.navbar-right
         - if current_user
           %p.navbar-text.navbar-right

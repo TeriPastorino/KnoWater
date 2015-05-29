@@ -1,10 +1,10 @@
-
 .container
   %h1 Log Water Use
-  = form_for Activity.new do |f|
-    = f.hidden_field :activity_type, :value => "shower"
-  %input{:max => "15", :min => "3", :step => "1", :type => "number", :value => "5"}
-/how do i save without submitting?
-/how do i make BIG buttons for up/down so mobile friendly?
+  .container
+  %p
+    = render partial: "activities/forms/#{params[:activity_type]}"
+
+
+/how do i save without submitting? => new view with form and redirect
+/how can i change "shower label" to image/icon?
 /why do i want the "shower" label hidden?
-/=end

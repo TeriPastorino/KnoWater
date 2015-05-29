@@ -1,0 +1,5 @@
+= form_for Activity.new do |f|
+  = f.hidden_field :activity_type, :value => "toilet"
+  = f.label "Toilet"
+  = f.select(:per_use,(2..10))
+  = f.label "flushes"
