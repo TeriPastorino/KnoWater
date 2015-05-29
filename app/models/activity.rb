@@ -1,6 +1,7 @@
 class Activity < ActiveRecord::Base
+  ACTIVITY_TYPES = %w(shower bath toilet)
   belongs_to :user
-  validates :activity_type, presence: true, inclusion: {in: %w(shower), allow_blank: true}
+  validates :activity_type, presence: true, inclusion: {in: ACTIVITY_TYPES, allow_blank: true}
   validates :per_use, presence: true, numericality: { only_integer: true }
   validates :user, presence: true
   before_save :convert_to_oz
@@ -11,10 +12,14 @@ class Activity < ActiveRecord::Base
   CONVERSION_HASH = {
     true => {
       "shower" => 256
+      "toilet" => 2
+      "bath" => 40
     },
     false => {
       "shower" => 512
-    }
+      "toilet" => 4
+      #bath => how much the tub is filled in gallons
+    },
   }
   #???? protected or private? protected can call methods on self but read that protected ofted used with callbacks
   protected

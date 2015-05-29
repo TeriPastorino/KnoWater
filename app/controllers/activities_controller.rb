@@ -19,6 +19,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:activity_id])
   end
 
+  def activities_choose
+    
+  end
+
   def update
   end
 
