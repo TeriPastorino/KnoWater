@@ -10,17 +10,17 @@ class ActivitiesController < ApplicationController
   
   def create
     @user = current_user
-    raise
     @activity = Activity.new(activity_params)
     @activity.save
+    redirect_to 
   end
 
   def show
     @activity = Activity.find(params[:activity_id])
   end
 
-  def activities_choose
-    
+  def choose
+
   end
 
   def update

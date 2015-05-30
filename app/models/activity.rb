@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-  ACTIVITY_TYPES = %w(shower bath toilet)
+  ACTIVITY_TYPES = %w(shower toilet bath)
   belongs_to :user
   validates :activity_type, presence: true, inclusion: {in: ACTIVITY_TYPES, allow_blank: true}
   validates :per_use, presence: true, numericality: { only_integer: true }
@@ -11,17 +11,17 @@ class Activity < ActiveRecord::Base
 
   CONVERSION_HASH = {
     true => {
-      "shower" => 256
-      "toilet" => 2
+      "shower" => 256,
+      "toilet" => 2,
       "bath" => 40
     },
     false => {
-      "shower" => 512
-      "toilet" => 4
-      #bath => how much the tub is filled in gallons
+      "shower" => 512,
+      "toilet" => 4,
+      "bath" => 40
     },
   }
-  #???? protected or private? protected can call methods on self but read that protected ofted used with callbacks
+
   protected
     def convert_to_oz
       multiplier = CONVERSION_HASH[high_efficiency][activity_type]
@@ -31,6 +31,6 @@ class Activity < ActiveRecord::Base
 end
 
 #extra
-#validation for flush, laundry, dishwasher
-#Conversion hash for flush, laundry, dishwasher
+#validation for toilet, laundry, dishwasher
+#Conversion hash for toilet, laundry, dishwasher
 #add bath/faucets
