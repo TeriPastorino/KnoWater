@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
   
   def index
-    @activity = Activity.all
+    @activities = Activity.all
   end
 
   def new
@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
     @user = current_user
     @activity = Activity.new(activity_params)
     @activity.save
-    redirect_to 
+    redirect_to @activities
   end
 
   def show
