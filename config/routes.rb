@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :activities
   get 'log', to: 'activities#choose', as: :choose_activity
-  # log_path("shower")
-  # log_path("bath")
+    #log_path("shower")
+    #log_path("bath")
   get 'log/:activity_type', to: 'activities#new', as: :log
 end
