@@ -20,11 +20,11 @@
       .col-md-4.box
         %h2 Water Usage For:
         %h3= Time.now.strftime("%m/%d/%Y")
-        - current_user.activities.each do |activity|
-          %p
-            You took a #{activity.per_use} minute #{activity.activity_type}
-        - Activity.today
-        -@day.total
+        - current_user.activities.today.each do |activity|
+          %p= activity.log_notice
+          / = day_total
+         
+
 
 
 

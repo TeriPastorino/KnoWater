@@ -1,9 +1,14 @@
 .container
   .row
-    %h1 View Previous Logs
-
-    %input{"data-provide" => "datepicker", :type => "text"} 
-
+    .col-md-8
+      %h1 View Previous Logs
+      %form.form-inline
+        #date-range.input-group
+          %input.form-control.date-picker{:type => "text", :name => "start"} 
+          %span.input-group-addon to
+          %input.form-control.date-picker{:type => "text", :name => "end"} 
+          %span.input-group-addon
+            %i.glyphicon.glyphicon-calendar
 .container
   .row
     .col-md-8
@@ -11,7 +16,6 @@
         .col-md-4
           
           /title of image  
-          = link_to activity_type, log_path(activity_type)
 
     .col-md-4.box
       %h1 Today's Usage

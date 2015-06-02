@@ -2,4 +2,5 @@
   = f.hidden_field :activity_type, :value => "toilet"
   = f.label "Toilet Flush"
   = f.select(:per_use,(1..10))
-  = f.submit "Log"
+  = f.submit "Log Flush"
+  = link_to "Back", :back
