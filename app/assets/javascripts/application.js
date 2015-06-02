@@ -14,6 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-datepicker
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.datepicker').datepicker(); });
+</script>
 
 setTimeout(function() {
   $('.alert').fadeOut();
