@@ -9,25 +9,36 @@ class Activity < ActiveRecord::Base
   #false = standard oz/gal
   #128 oz/gallon
 
+  #scope :between, lambda {|start_date, end_date| where(created_at: (start_Date.beginning_of_day...end.end_of_day))}
   CONVERSION_HASH = {
     true => {
       "shower" => 256,
-      "toilet" => 2,
+      "toilet" => 256,
       "bath" => 40
     },
     false => {
       "shower" => 512,
-      "toilet" => 4,
+      "toilet" => 512,
       "bath" => 40
     },
   }
 
-  def to_gallons
-    per_day = self.ounces
-  end
+  # def to_gallons
+  #   per_day = self.ounces
+  # end
 
   def self.today
     where("created_at >=?", Time.zone.now.beginning_of_day)
+  end
+
+  def log_notice
+    if activity_type == "shower"
+      "You took a #{per_use} minute #{activity_type}"
+    elsif activity_type == "toilet"
+      "You logged #{per_use} #{activity_type} flush"
+    else activity_type == "bath"
+      "You took #{per_use}  #{activity_type}"
+    end
   end
   
  
