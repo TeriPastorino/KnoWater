@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/signout', to: 'sessions#destroy', as: :signout
   get 'welcome/about'
   get 'pages/information'
+  get 'pages/compare'
 
   resources :activities
   get 'log', to: 'activities#choose', as: :choose_activity
