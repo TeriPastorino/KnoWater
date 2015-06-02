@@ -3,7 +3,11 @@ class ActivitiesController < ApplicationController
 
  
   def index
-    @activities = Activity.all
+    # if start_date && end_date
+    #   @actvities = Activity.between(Date.parse(params[:start]), Date.parse(params[:end]))
+    # else
+    #   @activities = Activity.today
+    # end
     @day_total  = Activity.today.sum(:ounces)/128
   end
 
@@ -16,10 +20,9 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
-      #take out our change per activity_type
-      flash[:notice] = "You logged a #{@activity.per_use} minute #{@activity.activity_type}"
+      flash[:notice] = @activity.log_notice
       redirect_to choose_activity_path
-    else activty.destroy?
+    else 
       flash[:notice] = "You did not log any activities"
       redirect_to choose_activity_path    
     end
@@ -27,7 +30,6 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-    # @activity = 
   end
 
   def choose
