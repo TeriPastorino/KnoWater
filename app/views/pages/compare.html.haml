@@ -1,0 +1,21 @@
+.container
+  .row
+    %h1 View Previous Logs
+
+    %input{"data-provide" => "datepicker", :type => "text"} 
+
+.container
+  .row
+    .col-md-8
+      - Activity::ACTIVITY_TYPES.each do |activity_type|
+        .col-md-4
+          
+          /title of image  
+          = link_to activity_type, log_path(activity_type)
+
+    .col-md-4.box
+      %h1 Today's Usage
+      - current_user.activities.each do |activity|
+        %p
+          You took a #{activity.per_use} minute #{activity.activity_type}
+      - Activity.today  

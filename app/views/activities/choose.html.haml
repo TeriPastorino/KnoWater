@@ -1,18 +1,30 @@
-%body.header-color
+
 .container
   .row
-    .col-md-8
-      - Activity::ACTIVITY_TYPES.each do |activity_type|
-        .a.thumbnail-transp
-        .container
-        = link_to image_tag("activities/#{activity_type}.png"), log_path(activity_type)
+    .col-md-12.center
+    %h1.center Log Your Water Use
 
-        /title of image  
-        = link_to activity_type, log_path(activity_type)
-    .container
-      .row
-        .col-md-4
-        %h1 Sidebar
-        %p Today's Usage
+  .container
+    .row
+      .col-md-8
+        .row
+          - Activity::ACTIVITY_TYPES.each do |activity_type|
+            .col-md-4
+              .a.thumbnail-transp
+              .container
+              = link_to image_tag("activities/#{activity_type}.png"), log_path(activity_type)
+
+              /title of image  
+              = link_to activity_type, log_path(activity_type)
+
+      .col-md-4.box
+        %h2 Water Usage For:
+        %h3= Time.now.strftime("%m/%d/%Y")
+        - current_user.activities.each do |activity|
+          %p
+            You took a #{activity.per_use} minute #{activity.activity_type}
+        - Activity.today
+        -@day.total
+
 
 
