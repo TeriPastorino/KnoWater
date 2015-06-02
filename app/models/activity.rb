@@ -22,12 +22,21 @@ class Activity < ActiveRecord::Base
     },
   }
 
+  def to_gallons
+    per_day = self.ounces
+  end
+
+  def self.today
+    where("created_at >=?", Time.zone.now.beginning_of_day)
+  end
+  
+ 
   protected
     def convert_to_oz
       multiplier = CONVERSION_HASH[high_efficiency][activity_type]
       self.ounces = per_use * multiplier
     end
-  
+
 end
 
 #extra
