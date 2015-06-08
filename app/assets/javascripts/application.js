@@ -16,17 +16,20 @@
 //= require_tree .
 //= require bootstrap-datepicker
 
+// multi date pops up the calendar, w/o nothing happens
+//work on formatting date popup, one date, display below, autoclose
+
 $(document).ready(function(){ 
   $('#date-range').datepicker({
-    multidate: 2,
     todayHighlight: true,
     autoclose: true, 
+    orientation: "top",
     inputs: $(".date-picker")
   });
 });
 
-// multi date pops up the calendar, w/o nothing happens
-//work on formatting date popup, one date, display below, autoclose
+//fade notices
+
 setTimeout(function() {
   $('.alert').fadeOut();
 }, 5000);
