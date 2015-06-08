@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def information
+  def saving_tips
   end
 
 end
