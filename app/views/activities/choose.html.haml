@@ -1,4 +1,4 @@
-
+%body.header-choose
 .container
   .row
     .col-md-12.center
@@ -13,16 +13,17 @@
               .a.thumbnail-transp
               .container
               = link_to image_tag("activities/#{activity_type}.png"), log_path(activity_type)
-
-              /title of image  
-              = link_to activity_type, log_path(activity_type)
+                            
+              / = link_to activity_type, log_path(activity_type)
 
       .col-md-4.box
-        %h2 Water Usage For:
-        %h3= Time.now.strftime("%m/%d/%Y")
+        %h4= "Water Usage Logged: #{Time.now.strftime("%m/%d/%Y")}"
+        %h4= "Estimated Gallons Used #{@day_total}"
         - current_user.activities.today.each do |activity|
           %p= activity.log_notice
-          / = day_total
+  / .container
+  /   .row
+  /     .col-md-12.center
          
 
 

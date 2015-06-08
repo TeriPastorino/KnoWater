@@ -9,13 +9,13 @@
           %input.form-control.date-picker{:type => "text", :name => "end"} 
           %span.input-group-addon
             %i.glyphicon.glyphicon-calendar
+        .input-group
+          %input.btn.btn-default{type: "submit", value: "GO!!!"}
 .container
   .row
     .col-md-8
       - Activity::ACTIVITY_TYPES.each do |activity_type|
         .col-md-4
-          
-          /title of image  
 
     .col-md-4.box
       %h1 Today's Usage
@@ -23,5 +23,3 @@
         %p
           You took a #{activity.per_use} minute #{activity.activity_type}
       - Activity.today  
-      
-  

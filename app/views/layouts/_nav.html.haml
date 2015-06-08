@@ -20,16 +20,16 @@
             Home
             %span.sr-only (current)
         %li
-          %a{:href => "/log"}
-            Log
+          %a{:href => "/pages/saving_tips"}
+            Saving Tips
             %span.sr-only(current)
         %li
           %a{:href => "/activities/index"}
             Compare
             %span.sr-only(current)            
         %li
-          %a{:href => "/pages/information"}
-            Information
+          %a{:href => "/log"}
+            Log
             %span.sr-only(current)
 
       %ul.nav.navbar-nav.navbar-right
@@ -37,5 +37,10 @@
           %p.navbar-text.navbar-right
             Hello #{current_user.name} !
             = link_to 'Sign out', signout_path
+        - else
+          %p.navbar-right
+            = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button', style: "margin-top: 10px;" do
+              %i.fa.fa-twitter &nbsp;
+              Sign in with Twitter
     / /.navbar-collapse
   / /.container-fluid

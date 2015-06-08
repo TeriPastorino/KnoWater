@@ -1,28 +1,37 @@
 %body.header-bg
   .container
-    .jumbotron-transp
-      %h1 KnoWater
-      %h2 Make a Difference
-      %p 
-        %li How much water do you currently use?
-        %li Track your daily usage
-        %li Make little changes to Reduce and Save what little water we have
+    .row
+    .col-md-8
+      .jumbotron-transp
+        %h1 KnoWater
+        %h2 Make a Difference
+        %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
+        %h3 We never know the worth of water till the well is dry. 
+        %h4 ~Thomas Fuller, Gnomologia, 1732
+        %p 
 
-      %ul
-      = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
-        %i.fa.fa-twitter &nbsp;
-        Sign in with Twitter
-      %ul
-      = link_to "#", class: 'btn btn-social btn-lg btn-facebook btn-sm', role: 'button' do
-        %i.fa.fa-twitter &nbsp;
-        Sign in with Facebook
+          %li How much water do you currently use?  
+          The average American uses more than 100 gallons of water daily   
+          Estimate your Current Usage
 
-    %h3.text-center Calculate your Current Usage
+          %li Track your daily usage
+          %li Make little changes to Reduce and Save what little water we have
+    - unless current_user.present?
+      .col-md-4.jumbotron-transp
+        %ul.list-unstyled
+          / %li.mbl
+          /   = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
+          /     %i.fa.fa-twitter &nbsp;
+          /     Sign in with Twitter
+        / %li
+        /   = link_to "#", class: 'btn btn-social btn-lg btn-facebook btn-sm', role: 'button' do
+        /     %i.fa.fa-twitter &nbsp;
+        /     Sign in with Facebook
+
+    %h3.text-center No matter where you live, saving water at home can be a meaningful, easy and fun
     %p blah blah blah
     %p Hello World
 
-    %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
-    %h3 We never know the worth of water till the well is dry. ~Thomas Fuller, Gnomologia, 1732
 
      
 
