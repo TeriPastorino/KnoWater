@@ -5,11 +5,17 @@ class Activity < ActiveRecord::Base
   validates :per_use, presence: true, numericality: { only_integer: true }
   validates :user, presence: true
   before_save :convert_to_oz
+  
   #true = for high energy oz/gal
   #false = standard oz/gal
   #128 oz/gallon
 
-  #scope :between, lambda {|start_date, end_date| where(created_at: (start_Date.beginning_of_day...end.end_of_day))}
+  # def self.between(start_date, end_date)
+  #   lambda {|start_date, end_date| where(created_at: (start_date.beginning_of_day...end_date.end_of_day))}.call(start_date, end_date)
+  # end
+  #need set var start_date end_date 
+  scope :between, lambda {|start_date, end_date| where(created_at: (start_date.beginning_of_day...end_date.end_of_day))}
+  
   CONVERSION_HASH = {
     true => {
       "shower" => 256,
@@ -22,6 +28,7 @@ class Activity < ActiveRecord::Base
       "bath" => 40
     },
   }
+
 
   # def to_gallons
   #   per_day = self.ounces
