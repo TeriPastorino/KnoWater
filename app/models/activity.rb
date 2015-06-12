@@ -20,15 +20,14 @@ class Activity < ActiveRecord::Base
     true => {
       "shower" => 256,
       "toilet" => 256,
-      "bath" => 40
+      "bath" => 5120
     },
     false => {
       "shower" => 512,
       "toilet" => 512,
-      "bath" => 40
+      "bath" => 5120
     },
   }
-
 
   # def to_gallons
   #   per_day = self.ounces
@@ -48,13 +47,11 @@ class Activity < ActiveRecord::Base
     end
   end
   
- 
   protected
     def convert_to_oz
       multiplier = CONVERSION_HASH[high_efficiency][activity_type]
       self.ounces = per_use * multiplier
     end
-
 end
 
 #extra
