@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(activity_params[:activity][:activity_type])
+    @activity = current_user.activities.build(activity_params)
     if @activity.save
       flash[:notice] = @activity.log_notice
       redirect_to choose_activity_path
@@ -45,13 +45,11 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-    @activities_by_type = current_users.activities.today.group(:activity_type).sum(:per_use) 
-
   end
 
   def choose
     @day_total  = Activity.today.sum(:ounces)/128
-
+    @activities_by_type = current_user.activities.today.group(:activity_type).sum(:ounces) 
   end
 
   def update
