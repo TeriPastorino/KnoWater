@@ -1,24 +1,24 @@
 %body.header-bg
+  .container.center
   .container
     .row
-    .col-md-8
+    .col-md-12
       .jumbotron-transp
         %h1 KnoWater
-        %h2 Make a Difference
-        %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
-        %h3 We never know the worth of water till the well is dry. 
-        %h4 ~Thomas Fuller, Gnomologia, 1732
-        %p 
-
-          %li How much water do you currently use?  
-          The average American uses more than 100 gallons of water daily   
-          Estimate your Current Usage
-
-          %li Track your daily usage
-          %li Make little changes to Reduce and Save what little water we have
+        %h3.blue.align-center Make a Difference
+        %p Do you know how much water you currently use?  
+        %p The average American uses more than 100 gallons of water daily   
+        %p
+      
+        %li.h4 Use the Log to Track your daily usage
+        %li.h4 Make little changes to Reduce 
+        %li.h4 Pledge to Reduce 10% or even more
     - unless current_user.present?
       .col-md-4.jumbotron-transp
         %ul.list-unstyled
+          %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
+          %h3 We never know the worth of water till the well is dry. 
+          %h4 ~Thomas Fuller, Gnomologia, 1732
           / %li.mbl
           /   = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
           /     %i.fa.fa-twitter &nbsp;
@@ -28,9 +28,9 @@
         /     %i.fa.fa-twitter &nbsp;
         /     Sign in with Facebook
 
-    %h3.text-center No matter where you live, saving water at home can be a meaningful, easy and fun
-    %p blah blah blah
-    %p Hello World
+    / %h3.text-center No matter where you live, saving water at home can be a meaningful, easy and fun
+    / %p blah blah blah
+    / %p Hello World
 
 
      
