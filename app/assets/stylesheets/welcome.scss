@@ -11,7 +11,7 @@
 }
 
 .header-saving{
-  background: image-url('0_8bc83_b2082207_XXXL.png') no-repeat center center fixed;
+  background: image-url('waterwave.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,7 +19,7 @@
 }
 
 .header-choose{
-  background: image-url('water1.jpg') no-repeat center center fixed;
+  background: image-url('WaterBackground.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,24 +35,29 @@
   color: black;
   /*background: rgb(0, 54, 54);*/
   background: rgba(255, 255, 255, 0.8);
+  width: 100%;
   }
     /* all other browsers */
-
-  .header-color{
-    background-color: #87CEEB,
+.navbar-default {
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
   }
 
-  .thumbnail-transp{
-    background: rgba(0, 0, 0, 0);
-    width: 90px;
-    height: 90px;
+.header-color{
+  background-color: #87CEEB,
   }
 
-  .box{
-    outline: 4px solid black;
+.thumbnail-transp{
+  background: rgba(0, 0, 0, 0);
+  width: 90px;
+  height: 90px;
+  } 
+
+.box{
+  outline: 4px solid black;
   }
 
-  .center{
-    text-align: center;
+.center{
+  text-align: center;
   }
  
