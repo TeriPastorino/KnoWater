@@ -1,8 +1,9 @@
 %body.header-choose
+=params
 .container
   .row
-    .col-md-12.center
-    %h1.center Log Your Water Use
+    .col-md-12
+    %h3 Log Your Water Use
 
   .container
     .row
@@ -14,18 +15,15 @@
               .container
               = link_to image_tag("activities/#{activity_type}.png"), log_path(activity_type)
                             
-              / = link_to activity_type, log_path(activity_type)
+              /= link_to activity_type, log_path(activity_type)
 
       .col-md-4.box
-        %h4= "Water Usage Logged: #{Time.now.strftime("%m/%d/%Y")}"
-        %h4= "Estimated Gallons Used #{@day_total}"
+        %h5= "Water Usage Logged: #{Time.now.strftime("%m/%d/%Y")}"
+        %h5= "Estimated Gallons Used #{@day_total}"
         - current_user.activities.today.each do |activity|
           %p= activity.log_notice
-  / .container
-  /   .row
-  /     .col-md-12.center
-         
+        %ul 
+        / - @activities_by_type.each do |activity_type, ounces|
 
-
-
-
+        / %li You used #{ounces/128} gallons of water using the #{activity_type}
+  
