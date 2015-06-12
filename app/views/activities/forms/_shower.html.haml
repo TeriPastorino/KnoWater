@@ -3,7 +3,10 @@
   = f.label "Shower"
   = f.select(:per_use,(2..15))
   = f.label "minutes"
+  %p
+  .form-group  
   = f.submit "Log Shower"
+  %p
   = link_to "Back", :back
 
   
