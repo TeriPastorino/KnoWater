@@ -26,12 +26,27 @@
   }
 }
 
-.mbl {
+.mbottom {
   margin-bottom: 20px;
 }
 
+.icon-margin {
+  position: relative;
+  top: 100px;
+}
+
+.text-margin {
+  position: relative;
+  top: 65px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font: 400 15px/1.6 'Ledger', Garamond, Georgia, serif;
+}
+
 .navbar-default .navbar-brand {
-    color: #0264a1;
+  color: #0264a1;
+  font: 400 18px/1.6 'Ledger', Garamond, Georgia, serif;
 }
 
 h1 {
@@ -72,6 +87,6 @@ p {
   font: 400 15px/1.6 'Ledger', Garamond, Georgia, serif;
 }
 
-.li {
+li {
   font: 400 15px/1.6 'Ledger', Garamond, Georgia, serif;
 }
