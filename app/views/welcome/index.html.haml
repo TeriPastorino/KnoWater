@@ -6,20 +6,21 @@
       .jumbotron-transp
         %h1 KnoWater
         %h3.blue.align-center Make a Difference
-        %p Do you know how much water you currently use?  
         %p The average American uses more than 100 gallons of water daily   
+        %p Do you know how much water you currently use?  
         %p
-      
-        %li.h4 Use the Log to Track your daily usage
-        %li.h4 Make little changes to Reduce 
-        %li.h4 Pledge to Reduce 10% or even more
-    - unless current_user.present?
-      .col-md-4.jumbotron-transp
+          %li Use the 
+          / =link_to ("Log", choose_activity_path)to Track your daily usage
+          %li Make little changes to Save Water 
+          %li Pledge to Reduce 10% or even more
+          %li Compare Past Use to Current Use
+
+      .col-md-8.jumbotron-transp
         %ul.list-unstyled
           %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
-          %h3 We never know the worth of water till the well is dry. 
-          %h4 ~Thomas Fuller, Gnomologia, 1732
-          / %li.mbl
+          %h4 We never know the worth of water till the well is dry. 
+          %h5 ~Thomas Fuller, Gnomologia, 1732
+          / %li.mbottom
           /   = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
           /     %i.fa.fa-twitter &nbsp;
           /     Sign in with Twitter
