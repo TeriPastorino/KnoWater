@@ -4,7 +4,8 @@ class ActivitiesController < ApplicationController
   def index
     #@activities = Activity.all
     if params[:start_date] && params[:end_date]
-       @actvities = Activity.between(Date.strptime(params[:start_date]), Date.strptime(params[:end_date]))
+       @activities = current_user.activities.between(Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
+      
      else
        @activities = Activity.today
      end
