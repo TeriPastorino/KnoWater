@@ -9,17 +9,25 @@
         %p The average American uses more than 100 gallons of water daily   
         %p Do you know how much water you currently use?  
         %p
-          %li Use the 
-          / =link_to ("Log", choose_activity_path)to Track your daily usage
-          %li Make little changes to Save Water 
+          %li
+            Use the 
+            =link_to "Log", choose_activity_path
+            to Track your daily usage
+          %li 
+            Make little changes to 
+            =link_to "Save Water", pages_saving_tips_path 
           %li Pledge to Reduce 10% or even more
-          %li Compare Past Use to Current Use
+          %li 
+            =link_to "Compare", activities_index_path 
+            Past Use to Current Use
 
-      .col-md-8.jumbotron-transp
+
+      .col-md-8.jumbotron-transp.margin-left
         %ul.list-unstyled
-          %i.fa.fa-quote-left.fa-3x.pull-left.fa-border
+          %i.fa.fa-quote-left.fa-2x.pull-left
           %h4 We never know the worth of water till the well is dry. 
           %h5 ~Thomas Fuller, Gnomologia, 1732
+
           / %li.mbottom
           /   = link_to "/auth/twitter", class: 'btn btn-social btn-lg btn-twitter btn-sm', role: 'button' do
           /     %i.fa.fa-twitter &nbsp;
@@ -29,9 +37,7 @@
         /     %i.fa.fa-twitter &nbsp;
         /     Sign in with Facebook
 
-    / %h3.text-center No matter where you live, saving water at home can be a meaningful, easy and fun
-    / %p blah blah blah
-    / %p Hello World
+   
 
 
      
