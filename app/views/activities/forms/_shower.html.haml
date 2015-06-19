@@ -4,6 +4,10 @@
   = f.select(:per_use,(2..15))
   = f.label "minutes"
   %p
+  .form-group
+  = f.label :high_efficiency
+  = f.check_box :high_efficiency
+  %p
   .form-group  
   = f.submit "Log Shower"
   %p
