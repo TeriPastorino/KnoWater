@@ -1,25 +1,40 @@
+= javascript_include_tag "//www.google.com/jsapi"
+= javascript_include_tag "path/to/highcharts.js", "chartkick"
+
+%h4.align-center.blue Chart & Compare
 .container
   .row
     .col-md-8
-      %h3.align-center.blue View Previous Logs
       %form.form-inline
         #date-range.input-group
-          %input.form-control.date-picker{:type => "text", :name => "start"} 
+          %input.form-control.date-picker{:type => "text", :name => "start_date"} 
           %span.input-group-addon to
-          %input.form-control.date-picker{:type => "text", :name => "end"} 
+          %input.form-control.date-picker{:type => "text", :name => "end_date"} 
           %span.input-group-addon
             %i.glyphicon.glyphicon-calendar
         .input-group
-          %input.btn.btn-default{type: "submit", value: "GO!!!"}
+          %input.btn.btn-default{type: "submit", value: "Chart"}
 .container
   .row
     .col-md-8
       - Activity::ACTIVITY_TYPES.each do |activity_type|
         .col-md-4
 
-    .col-md-4.box
-      %h5 Today's Usage
-      - current_user.activities.each do |activity|
-        %p
-          You took a #{activity.per_use} minute #{activity.activity_type}
-      - Activity.today  
+    .col-xs-6
+  
+
+  = column_chart @activities.group(:activity_type).sum("ounces/128")
+
+  %h5 Gallons Used from #{params[:start_date]} to  #{params[:end_date]}
+  
+  %h5= "Total Estimated Gallons Used: #{@activities.group(:activity_type).sum("ounces/128")}"
+  
+  
+  /= column_chart @activities.map { |c| [c.sum_of_gallons, c.created_at_date] }
+
+/   Activity.select("SUM(ounces)/128 as sum_of_gallons
+
+/   Activity.between(2.days.ago, 1.hour.ago).select("SUM(ounces)/128 as sum_of_gallons, DATE(activities.created_at) as created_at_date").group("DATE(activities.created_at)").order("sum_of_gallons")
+
+/ Activity.between(4.days.ago, Time.now).select("SUM(ounces)/128 as sum_of_gallons, DATE(activities.created_at) as created_at_date").group("DATE(activities.created_at)").order("sum_of_gallons")
+
