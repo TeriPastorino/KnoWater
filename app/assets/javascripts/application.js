@@ -11,13 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
 
-// multi date pops up the calendar, w/o nothing happens
-//work on formatting date popup, one date, display below, autoclose
 
 $(document).ready(function(){ 
   $('#date-range').datepicker({
